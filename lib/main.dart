@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:laundryapp/pages/cadastrar.dart';
 import 'package:laundryapp/pages/dashboard.dart';
 import 'package:laundryapp/pages/home.dart';
 import 'package:laundryapp/pages/login.dart';
@@ -45,6 +46,10 @@ Route<dynamic> _onGenerateRoute(RouteSettings settings) {
     case "/login":
       return MaterialPageRoute(builder: (BuildContext context) {
         return Login();
+      });
+      case "cadastrar":
+      return MaterialPageRoute(builder: (BuildContext context) {
+        return Cadastrar();
       });
     case "/dashboard":
       return MaterialPageRoute(builder: (BuildContext context) {

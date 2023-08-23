@@ -5,7 +5,7 @@ import '../utils/helper.dart';
 import '../widgets/app_button.dart';
 import '../widgets/input_widget.dart';
 
-class Login extends StatelessWidget {
+class Cadastrar extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
