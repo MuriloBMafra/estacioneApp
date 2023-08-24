@@ -24,12 +24,12 @@ class _DashboardState extends State<Dashboard> {
           Icon(
             Icons.home,
             size: 30.0,
-            color: activeIndex == 0 ? const Color.fromARGB(255, 157, 11, 11) : Color(0xFFC8C9CB),
+            color: activeIndex == 0 ?  Colors.white : Color(0xFFC8C9CB),
           ),
           Icon(
             Icons.pin_drop_rounded,
             size: 30.0,
-            color: activeIndex == 1 ? Color.fromARGB(255, 220, 12, 12) : Color(0xFFC8C9CB),
+            color: activeIndex == 1 ? Colors.white : Color(0xFFC8C9CB),
           ),
           Icon(
             Icons.add,
@@ -80,6 +80,7 @@ class _DashboardState extends State<Dashboard> {
                     padding: EdgeInsets.symmetric(
                       horizontal: 16.0,
                     ),
+                    
                     child: Column( // alinhamento do Botão de voltar
                       mainAxisSize: MainAxisSize.min,
                       crossAxisAlignment: CrossAxisAlignment.start,
@@ -97,17 +98,18 @@ class _DashboardState extends State<Dashboard> {
                           mainAxisAlignment: MainAxisAlignment.spaceAround,
                           children: [
                             RichText(
+                              //  child: LocationSlider(),
                               text: TextSpan(
                                 children: [
-                                  TextSpan(
-                                    text: "Bem-vindo ao estacionAi,\n",
-                                    style: Theme.of(context)
-                                        .textTheme
-                                        .titleLarge
-                                        ?.copyWith(
-                                          color: Colors.white,
-                                        ),
-                                  ),
+                                  // TextSpan(
+                                  //   text: "Bem-vindo ao estacionAi,\n",
+                                  //   style: Theme.of(context)
+                                  //       .textTheme
+                                  //       .titleLarge
+                                  //       ?.copyWith(
+                                  //         color: Colors.white,
+                                  //       ),
+                                  // ),
                                   TextSpan(
                                     text: "Variavel nome",
                                     style: Theme.of(context)
@@ -121,16 +123,17 @@ class _DashboardState extends State<Dashboard> {
                                 ],
                               ),
                             ),
-                            Image.asset( // Imagem usuario
-                              "assets/images/user.png",
-                              height: 80,
-                              width: 80,
-                            )
+                            // Image.asset( // Imagem usuario
+                            //   "assets/images/user.png",
+                            //   height: 80,
+                            //   width: 80,
+                            // )
                           ],
                         )
                       ],
                     ),
                   ),
+                  LocationSlider(),
                   SizedBox(
                     height: 15.0,
                   ),

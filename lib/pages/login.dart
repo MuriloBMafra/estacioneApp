@@ -53,7 +53,7 @@ class Login extends StatelessWidget {
                               height: 20.0,
                             ),
                             Text(
-                              "Log in to your account",
+                              "Acessar sua conta",
                               style: Theme.of(context)
                                   .textTheme
                                   .titleLarge
@@ -90,15 +90,15 @@ class Login extends StatelessWidget {
                               // Lets make a generic input widget
                               InputWidget(
                                 topLabel: "Email",
-                                hintText: "Enter your email address",
+                                hintText: "Entre com seu Email",
                               ),
                               SizedBox(
                                 height: 25.0,
                               ),
                               InputWidget(
-                                topLabel: "Password",
+                                topLabel: "Senha",
                                 obscureText: true,
-                                hintText: "Enter your password",
+                                hintText: "Entre com a sua senha",
                               ),
                               SizedBox(
                                 height: 15.0,
@@ -106,7 +106,7 @@ class Login extends StatelessWidget {
                               GestureDetector(
                                 onTap: () {},
                                 child: Text(
-                                  "Forgot Password?",
+                                  "Esqueceu sua senha?",
                                   textAlign: TextAlign.right,
                                   style: TextStyle(
                                     color: Constants.primaryColor,
@@ -119,7 +119,7 @@ class Login extends StatelessWidget {
                               ),
                               AppButton(
                                 type: ButtonType.PRIMARY,
-                                text: "Log In",
+                                text: "Acessar",
                                 onPressed: () {
                                   nextScreen(context, "/dashboard");
                                 },

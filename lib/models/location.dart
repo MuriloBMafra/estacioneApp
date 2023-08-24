@@ -1,15 +1,15 @@
 import 'dart:ui';
 
-class Location {
-  final String address;
-  final String state;
-  final Color color;
-  final String imagePath;
+class Veiculo {
+  final String placa;
+  final String modelo;
+  final String marca;
+  final String categoria;
 
-  Location({
-    required this.address,
-    required this.color,
-    required this.imagePath,
-    required this.state,
+  Veiculo({
+    required this.placa,
+    required this.modelo,
+    required this.marca,
+    required this.categoria,
   });
 }

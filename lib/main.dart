@@ -47,7 +47,7 @@ Route<dynamic> _onGenerateRoute(RouteSettings settings) {
       return MaterialPageRoute(builder: (BuildContext context) {
         return Login();
       });
-      case "cadastrar":
+      case "/cadastrar":
       return MaterialPageRoute(builder: (BuildContext context) {
         return Cadastrar();
       });

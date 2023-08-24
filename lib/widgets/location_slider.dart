@@ -9,18 +9,18 @@ class LocationSlider extends StatelessWidget {
     // Model to represent each card
 
     // Make a list to represent each card
-    List<Location> locations = [
-      Location(
-        address: "Kings Street 20",
-        color: Color.fromRGBO(89, 69, 199, 1),
-        state: "Bucharest",
-        imagePath: "assets/images/house1.png",
+    List<Veiculo> locations = [
+      Veiculo(
+        placa: "QWD-2345",
+        marca: "Yamaha",
+        modelo: "Fazer",
+        categoria: "Moto",
       ),
-      Location(
-        address: "Victory Square 18",
-        color: Color.fromRGBO(237, 116, 41, 1),
-        state: "Bucharest",
-        imagePath: "assets/images/house2.png",
+      Veiculo(
+        placa: "Victory Square 18",
+        marca: "ui",
+        modelo: "Bucharest",
+        categoria: "assets/images/house2.png",
       )
     ];
     return Container(
@@ -35,7 +35,7 @@ class LocationSlider extends StatelessWidget {
             child: Container(
               width: ScreenUtil().setWidth(200.0),
               decoration: BoxDecoration(
-                color: locations[index].color,
+                color: Color.fromRGBO(7, 67, 146, 0.61),
                 borderRadius: BorderRadius.circular(8.0),
                 boxShadow: [
                   BoxShadow(
@@ -58,16 +58,16 @@ class LocationSlider extends StatelessWidget {
                     top: 0.0,
                     child: Opacity(
                       opacity: 0.69,
-                      child: Image.asset(
-                        locations[index].imagePath,
-                      ),
+                      // child: Image.asset(
+                      //   locations[index].imagePath,
+                      // ),
                     ),
                   ),
                   RichText(
                     text: TextSpan(
                       children: [
                         TextSpan(
-                          text: "${locations[index].address},\n",
+                          text: "${locations[index].placa},\n",
                           style: TextStyle(
                             fontWeight: FontWeight.w600,
                             height: 1.5,
@@ -75,7 +75,7 @@ class LocationSlider extends StatelessWidget {
                           ),
                         ),
                         TextSpan(
-                          text: locations[index].state,
+                          text: locations[index].marca,
                           style: TextStyle(
                             fontSize: 16.0,
                           ),
