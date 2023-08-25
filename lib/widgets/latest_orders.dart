@@ -8,7 +8,7 @@ class LatestOrders extends StatelessWidget {
   final List<Order> orders = [
     Order(
       id: 507,
-      deliveryAddress: "New Times Square",
+      deliveryAddress: "QBX-2030",
       arrivalDate: DateTime(2020, 1, 23),
       placedDate: DateTime(2020, 1, 17),
       status: OrderStatus.DELIVERING,
@@ -38,14 +38,14 @@ class LatestOrders extends StatelessWidget {
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: [
                 Text(
-                  "Latest Orders",
+                  "Ultimas entradas",
                   style: TextStyle(
                     color: Color.fromRGBO(19, 22, 33, 1),
                     fontSize: 18.0,
                   ),
                 ),
                 Text(
-                  "View All",
+                  "Ver tudo",
                   style: TextStyle(
                     color: Constants.primaryColor,
                     fontWeight: FontWeight.w600,

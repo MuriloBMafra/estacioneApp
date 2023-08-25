@@ -53,7 +53,7 @@ class Cadastrar extends StatelessWidget {
                               height: 20.0,
                             ),
                             Text(
-                              "Log in to your account",
+                              "Faça seu cadastro",
                               style: Theme.of(context)
                                   .textTheme
                                   .titleLarge
@@ -89,37 +89,44 @@ class Cadastrar extends StatelessWidget {
                             children: [
                               // Lets make a generic input widget
                               InputWidget(
-                                topLabel: "Email",
-                                hintText: "Enter your email address",
+                                topLabel: "Nome",
+                                hintText: "Cadastre seu nome",
                               ),
                               SizedBox(
                                 height: 25.0,
                               ),
                               InputWidget(
-                                topLabel: "Password",
-                                obscureText: true,
-                                hintText: "Enter your password",
+                                topLabel: "E-mail",
+                               
+                                hintText: "Cadastre seu e-mail",
                               ),
+                              SizedBox(
+                                height: 25.0,
+                              ),
+                              InputWidget(
+                                topLabel: "Senha",
+                                obscureText: true,
+                                hintText: "Cadastre sua senha"),
                               SizedBox(
                                 height: 15.0,
                               ),
-                              GestureDetector(
-                                onTap: () {},
-                                child: Text(
-                                  "Forgot Password?",
-                                  textAlign: TextAlign.right,
-                                  style: TextStyle(
-                                    color: Constants.primaryColor,
-                                    fontWeight: FontWeight.w600,
-                                  ),
-                                ),
-                              ),
+                              // GestureDetector(
+                              //   onTap: () {},
+                              //   child: Text(
+                              //     "Forgot Password?",
+                              //     textAlign: TextAlign.right,
+                              //     style: TextStyle(
+                              //       color: Constants.primaryColor,
+                              //       fontWeight: FontWeight.w600,
+                              //     ),
+                              //   ),
+                              // ),
                               SizedBox(
                                 height: 20.0,
                               ),
                               AppButton(
                                 type: ButtonType.PRIMARY,
-                                text: "Log In",
+                                text: "Cadastrar",
                                 onPressed: () {
                                   nextScreen(context, "/dashboard");
                                 },

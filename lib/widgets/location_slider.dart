@@ -9,17 +9,17 @@ class LocationSlider extends StatelessWidget {
     // Model to represent each card
 
     // Make a list to represent each card
-    List<Veiculo> locations = [
+    List<Veiculo> veiculo = [
       Veiculo(
-        placa: "QWD-2345",
-        marca: "Yamaha",
-        modelo: "Fazer",
+        placa: "Total de veiculos:",
+        marca: "20",
+        color: Color.fromRGBO(59, 158, 220, 0.608),
         categoria: "Moto",
       ),
       Veiculo(
-        placa: "Victory Square 18",
-        marca: "ui",
-        modelo: "Bucharest",
+        placa: "Total faturamento:",
+        marca: "R 100",
+        color: Color.fromRGBO(85, 187, 17, 0.449),
         categoria: "assets/images/house2.png",
       )
     ];
@@ -27,15 +27,15 @@ class LocationSlider extends StatelessWidget {
       height: ScreenUtil().setHeight(90.0),
       child: ListView.separated(
         physics: BouncingScrollPhysics(),
-        padding: EdgeInsets.symmetric(horizontal: 24.0),
+        padding: EdgeInsets.symmetric(horizontal: 10.0),
         scrollDirection: Axis.horizontal,
         itemBuilder: (BuildContext context, int index) {
           return GestureDetector(
             onTap: () {},
             child: Container(
-              width: ScreenUtil().setWidth(200.0),
+              width: ScreenUtil().setWidth(170.0),
               decoration: BoxDecoration(
-                color: Color.fromRGBO(7, 67, 146, 0.61),
+                color: veiculo[index].color,
                 borderRadius: BorderRadius.circular(8.0),
                 boxShadow: [
                   BoxShadow(
@@ -67,7 +67,7 @@ class LocationSlider extends StatelessWidget {
                     text: TextSpan(
                       children: [
                         TextSpan(
-                          text: "${locations[index].placa},\n",
+                          text: "${veiculo[index].placa}\n",
                           style: TextStyle(
                             fontWeight: FontWeight.w600,
                             height: 1.5,
@@ -75,9 +75,9 @@ class LocationSlider extends StatelessWidget {
                           ),
                         ),
                         TextSpan(
-                          text: locations[index].marca,
+                          text: veiculo[index].marca,
                           style: TextStyle(
-                            fontSize: 16.0,
+                            fontSize: 25.0,
                           ),
                         )
                       ],
@@ -93,7 +93,7 @@ class LocationSlider extends StatelessWidget {
             width: 15.0,
           );
         },
-        itemCount: locations.length,
+        itemCount: veiculo.length,
       ),
     );
   }

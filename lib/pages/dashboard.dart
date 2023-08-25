@@ -78,7 +78,7 @@ class _DashboardState extends State<Dashboard> {
                   ),
                   Container( //Container do bem-vindo
                     padding: EdgeInsets.symmetric(
-                      horizontal: 16.0,
+                      horizontal: 10.0,
                     ),
                     
                     child: Column( // alinhamento do Botão de voltar
@@ -90,7 +90,7 @@ class _DashboardState extends State<Dashboard> {
                             Navigator.pop(context);
                           },
                           child: Icon(
-                            Icons.arrow_back_ios,
+                            Icons.logout,
                             color: Color.fromARGB(255, 202, 195, 195),
                           ),
                         ),
@@ -101,15 +101,15 @@ class _DashboardState extends State<Dashboard> {
                               //  child: LocationSlider(),
                               text: TextSpan(
                                 children: [
-                                  // TextSpan(
-                                  //   text: "Bem-vindo ao estacionAi,\n",
-                                  //   style: Theme.of(context)
-                                  //       .textTheme
-                                  //       .titleLarge
-                                  //       ?.copyWith(
-                                  //         color: Colors.white,
-                                  //       ),
-                                  // ),
+                                  TextSpan(
+                                    text: "Bem-vindo ao estacionAi,\n",
+                                    style: Theme.of(context)
+                                        .textTheme
+                                        .titleLarge
+                                        ?.copyWith(
+                                          color: Colors.white,
+                                        ),
+                                  ),
                                   TextSpan(
                                     text: "Variavel nome",
                                     style: Theme.of(context)
@@ -133,7 +133,7 @@ class _DashboardState extends State<Dashboard> {
                       ],
                     ),
                   ),
-                  LocationSlider(),
+                  // LocationSlider(),
                   SizedBox(
                     height: 15.0,
                   ),
@@ -161,12 +161,12 @@ class _DashboardState extends State<Dashboard> {
                             horizontal: 24.0,
                           ),
                           child: Text(
-                            "Veiculos adicionados",
+                            "Total",
                             style: TextStyle(
                               color: Color.fromRGBO(19, 22, 33, 1),
                               fontSize: 18.0,
                             ),
-                          ),
+                          )
                         ),
                         SizedBox(height: 7.0),
                         Container(

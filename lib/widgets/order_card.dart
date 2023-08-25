@@ -11,7 +11,7 @@ class OrderCard extends StatelessWidget {
   OrderCard({required this.order});
 
   // For formatting date
-  final DateFormat formatter = DateFormat("yyyy MM dd");
+  final DateFormat formatter = DateFormat("dd MM yyyy");
 
   @override
   Widget build(BuildContext context) {
@@ -50,11 +50,11 @@ class OrderCard extends StatelessWidget {
                   SizedBox(
                     height: 10.0,
                   ),
-                  textRow("Placed On", formatter.format(order.placedDate)),
+                  textRow("Entrada", formatter.format(order.placedDate)),
                   SizedBox(
                     height: 5.0,
                   ),
-                  textRow("Delivery On", formatter.format(order.arrivalDate))
+                  textRow("Saida", formatter.format(order.arrivalDate))
                 ],
               ),
             ),
@@ -91,7 +91,7 @@ Widget textRow(String textOne, String textTwo) {
 
 Widget getOrderIconWidget(OrderStatus status) {
   switch (status) {
-    case OrderStatus.PICKING_UP:
+    case OrderStatus.PICKING_UP: //DEFINI O ICON DE ULTIMAS ENTRADAS
       return Container(
         width: ScreenUtil().setWidth(37.0),
         height: ScreenUtil().setHeight(37.0),
@@ -100,7 +100,7 @@ Widget getOrderIconWidget(OrderStatus status) {
           color: Color.fromRGBO(221, 40, 81, 0.18),
         ),
         child: Icon(
-          Icons.local_activity,
+          Icons.motorcycle,
           color: Color.fromRGBO(221, 40, 81, 1),
         ),
       );
@@ -113,7 +113,7 @@ Widget getOrderIconWidget(OrderStatus status) {
           color: Color.fromRGBO(255, 99, 2, 0.15),
         ),
         child: Icon(
-          Icons.history,
+          Icons.car_repair_outlined,
           color: Color.fromRGBO(255, 99, 2, 1),
         ),
       );
@@ -126,7 +126,7 @@ Widget getOrderIconWidget(OrderStatus status) {
           color: Color.fromRGBO(221, 40, 81, 0.18),
         ),
         child: Icon(
-          Icons.local_activity,
+          Icons.motorcycle,
           color: Color.fromRGBO(221, 40, 81, 1),
         ),
       );
@@ -136,9 +136,9 @@ Widget getOrderIconWidget(OrderStatus status) {
 String getOrderStatusText(OrderStatus status) {
   switch (status) {
     case OrderStatus.DELIVERING:
-      return "Delivering Order";
+      return "Saidas";
     case OrderStatus.PICKING_UP:
-      return "Picking Up Order";
+      return "Entradas";
     default:
       return "";
   }
