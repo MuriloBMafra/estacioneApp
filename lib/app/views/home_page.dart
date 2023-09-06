@@ -43,6 +43,13 @@ class HomePage extends StatelessWidget{
               }
             ),
             ListTile( 
+              leading: Icon(Icons.edit_document),
+              title: Text('Forma pag'),
+              onTap: (){
+               Navigator.of(context).pushNamed('/forma_pagamento');
+              }
+            ),
+            ListTile( 
               leading: Icon(Icons.logout),
               title: Text('Logout'),
               onTap: (){

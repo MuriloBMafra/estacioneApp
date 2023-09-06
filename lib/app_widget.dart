@@ -1,4 +1,5 @@
 
+import 'package:estacione_app/app/views/forma_pagamento.dart';
 import 'package:flutter/material.dart';
 
 import 'app/views/cadastrar_usuario.dart';
@@ -17,7 +18,8 @@ class MyApp extends StatelessWidget{
         '/': (context) => LoginPage(),
         '/home': (context) => HomePage(),
         '/cadastrar_usuario': (context) => CadastrarUsuario(),
-        '/cadastrar_veiculo': (context) => CadastrarVeiculo(),
+        '/cadastrar_veiculo': (context) => VeiculoCadastrar(),
+        '/forma_pagamento': (context) => FormaPagamento(),
 
       },
       );

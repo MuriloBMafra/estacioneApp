@@ -1,68 +1,43 @@
+import 'package:estacione_app/app/controllers/VeiculoController.dart';
 import 'package:flutter/material.dart';
 
-import '../components/menu.dart';
 
-class CadastrarVeiculo extends StatefulWidget {
- 
-  @override
-  CadastrarVeiculoState createState() => CadastrarVeiculoState();
-}
-
-class CadastrarVeiculoState  extends State<CadastrarVeiculo> {
- 
+class VeiculoCadastrar extends StatelessWidget {
+  final VeiculoController controller = VeiculoController();
+  final TextEditingController placaController = TextEditingController();
+  final TextEditingController marcaController = TextEditingController();
+  final TextEditingController modeloController = TextEditingController();
+  final TextEditingController categoriaController = TextEditingController();
 
   @override
   Widget build(BuildContext context) {
-    return Material(
-      child: SizedBox(
-        width: double.infinity,
-        height: double.infinity,
-     child: Padding(
-       padding: const EdgeInsets.all(8.0),
-       child: Column(
-         mainAxisAlignment: MainAxisAlignment.center,
+    return Scaffold(
+      appBar: AppBar(
+        title: Text('Cadastrar veiculo'),
+      ),
+      body: Padding(
+        padding: const EdgeInsets.all(16.0),
+        child: Column(
+          crossAxisAlignment: CrossAxisAlignment.start,
           children: [
-            
             TextField(
-              onChanged: (placa){},
-              keyboardType: TextInputType.emailAddress,
-              decoration: InputDecoration(
-                labelText: 'Placa',
-                border: OutlineInputBorder(),
-              ),
-            ),
-            SizedBox(
-              height: 10,
+              controller: placaController,
+              decoration: InputDecoration(labelText: 'Placa'),
             ),
             TextField(
-              onChanged: (marca){
-                marca;
-              },
-              keyboardType: TextInputType.emailAddress,
-              decoration: InputDecoration(
-                labelText: 'Marca',
-                border: OutlineInputBorder(),
-              ),
+              controller: marcaController,
+              decoration: InputDecoration(labelText: 'Marca'),
             ),
-            SizedBox(
-              height: 10,
+            TextField(
+              controller: modeloController,
+              decoration: InputDecoration(labelText: 'Modelo'),
             ),
-
              TextField(
-              onChanged: (modelo){
-              },
-              decoration: 
-              InputDecoration(
-                labelText: 'Modelo',
-                border: OutlineInputBorder(),
-              ),
+              controller:categoriaController,
+              decoration: InputDecoration(labelText: 'categoria'),
             ),
-          
-          SizedBox(
-              height: 15,
-            ),
-
-           TextButton(
+            SizedBox(height: 16),
+            TextButton(
               style: ButtonStyle(
                 backgroundColor: MaterialStateProperty.all<Color>(Colors.blue),
                 foregroundColor: MaterialStateProperty.all<Color>(Colors.white),
@@ -78,15 +53,30 @@ class CadastrarVeiculoState  extends State<CadastrarVeiculo> {
                 ),
               ),
               onPressed: () { 
-                //  print(marca);
-               
+                  botaoPrincipalClicado();
                },
               child: Text('Cadastrar')
             ),
+            SizedBox(height: 16),
+            Text('Veículos Registrados:'),
+            Expanded(
+              child: ListView.builder(
+                itemCount: controller.veiculos.length,
+                itemBuilder: (context, index) {
+                  final veiculo = controller.veiculos[index];
+                  return ListTile(
+                    title: Text('Placa: ${veiculo.placa}'),
+                    subtitle: Text('Marca: ${veiculo.marca}, Modelo: ${veiculo.modelo}'),
+                  );
+                },
+              ),
+            ),
           ],
         ),
-     ),
       ),
     );
+  }
+  botaoPrincipalClicado(){
+    print("${placaController.text},${marcaController.text},${modeloController.text},${categoriaController.text},");
   }
 }

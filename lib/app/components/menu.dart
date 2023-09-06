@@ -5,6 +5,7 @@ class MenuComponents extends StatelessWidget{
   Widget build(BuildContext context) {
     // TODO: implement build
     return Scaffold(
+
       drawer: Drawer(
         child: Column(
           children: [
@@ -50,7 +51,13 @@ class MenuComponents extends StatelessWidget{
           ],
         ),
       ),
+      appBar: AppBar(
+        title: const Text('EstacioneAi'),
+        backgroundColor: Color.fromARGB(255, 172, 65, 23),
+      ),
+      
     );
+
   }
 
 
